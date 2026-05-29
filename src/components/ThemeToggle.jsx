@@ -27,9 +27,9 @@ export default function ThemeToggle() {
       <Button
         type="text"
         shape="circle"
-        icon={resolvedTheme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-gray-200" />}
+        icon={resolvedTheme === 'dark' ? <Sun size={20} className="text-amber-400" /> : <Moon size={20} className="text-slate-700 transition-colors" />}
         onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-        className="flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" />
+        className="flex items-center justify-center border-none text-slate-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer h-10 w-10 transition-colors" />
       
     </motion.div>);
 

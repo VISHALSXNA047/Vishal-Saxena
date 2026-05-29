@@ -57,7 +57,7 @@ const certifications = [
 }
 ,
 {
-  title: '1 day PowerBI workhop',
+  title: '1-Day Power BI Workshop',
   issuer: 'Ducat',
   date: '2025',
   link: 'https://drive.google.com/file/d/1iMWxekDbW2b1Pi42Yu029H0LMHWOiouz/view?usp=sharing',
@@ -69,7 +69,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-20 bg-gray-900 transition-colors duration-300">
+    <section id="certifications" className="py-20 bg-slate-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="section-container">
         <div className="flex flex-col items-center mb-16 text-center">
           <motion.div
@@ -85,7 +85,7 @@ export default function Certifications() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors">
             
             Professional <span className="text-indigo-600">Certifications</span>
           </motion.h2>
@@ -107,15 +107,17 @@ export default function Certifications() {
                 <div className={`w-14 h-14 bg-linear-to-br ${cert.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg transform group-hover:rotate-12 transition-transform duration-300`}>
                   <Award size={28} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">
                   {cert.title}
                 </h3>
-                <p className="text-gray-300 text-sm font-bold uppercase tracking-widest mt-2">
+                <p className="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase tracking-widest mt-2">
                   {cert.issuer} • {cert.date}
                 </p>
                 <div className="mt-auto">
                    <a
                   href={cert.link}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold text-sm hover:gap-3 transition-all">
                   
                      View Certificate <ExternalLink size={14} />

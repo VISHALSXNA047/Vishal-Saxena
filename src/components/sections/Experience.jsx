@@ -12,7 +12,7 @@ const experiences = [
   date: '2025 - 2025',
   location: 'Remote',
   description: 'Developed responsive user interfaces and optimized front-end performance for educational platforms.',
-  achievements: ['Load Time Increse By 40%','I Learn A lot Of things...']
+  achievements: ['Load time reduced by 40%', 'Gained core industry experience and technical insights']
 },
 {
   type: 'work',
@@ -45,7 +45,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 bg-gray-950 transition-colors duration-300">
+    <section id="experience" className="py-20 bg-white dark:bg-gray-950 transition-colors duration-300">
       <div className="section-container">
         <div className="flex flex-col items-center mb-16 text-center">
           <motion.div
@@ -61,7 +61,7 @@ export default function Experience() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors">
             
             Experience & <span className="text-indigo-600">Education</span>
           </motion.h2>
@@ -84,7 +84,7 @@ export default function Experience() {
               }>
               
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-gray-950 dark:bg-gray-900 border-4 border-indigo-600 rounded-full flex items-center justify-center -translate-x-1/2 z-10 shadow-lg">
+                <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-white dark:bg-gray-950 border-4 border-indigo-600 rounded-full flex items-center justify-center -translate-x-1/2 z-10 shadow-lg">
                   {item.type === 'work' ? <Briefcase size={18} className="text-indigo-600" /> : <GraduationCap size={18} className="text-indigo-600" />}
                 </div>
 
@@ -92,28 +92,28 @@ export default function Experience() {
                 <div className={`w-full md:w-[45%] ml-12 md:ml-0 overflow-hidden`}>
                   <div className="glass-card p-6 md:p-8 rounded-3xl group hover:border-indigo-500 transition-all">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                      <h3 className="text-xl font-bold text-white group-hover:text-indigo-600 transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">
                         {item.title}
                       </h3>
-                      <div className="flex items-center gap-1 text-xs font-bold bg-indigo-600/10 text-white-600 px-3 py-1 rounded-full whitespace-nowrap">
+                      <div className="flex items-center gap-1 text-xs font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-3 py-1 rounded-full whitespace-nowrap">
                         <Calendar size={12} />
                         {item.date}
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-2 text-gray-400 dark:text-gray-400 mb-4 font-medium italic">
-                      <span className="text-white-600">{item.company}</span>
-                      <span className="text-gray-300 dark:text-gray-200">|</span>
+                    <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 mb-4 font-medium italic text-sm">
+                      <span className="text-indigo-600 dark:text-indigo-400 font-bold">{item.company}</span>
+                      <span className="text-gray-300 dark:text-gray-700">|</span>
                       <span className="flex items-center gap-1"><MapPin size={14} /> {item.location}</span>
                     </div>
 
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
                       {item.description}
                     </p>
 
                     <div className="space-y-2">
                        {item.achievements.map((ach, j) =>
-                    <div key={j} className="flex items-start gap-2 text-sm text-gray-400 dark:text-gray-400 bg-gray-900 dark:bg-gray-800/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+                     <div key={j} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 bg-slate-50 dark:bg-gray-800/50 p-3 rounded-xl border border-gray-100 dark:border-gray-800">
                            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0" />
                            {ach}
                          </div>

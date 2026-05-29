@@ -149,7 +149,7 @@ export default function HireMeModal({ isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="relative w-full max-w-lg bg-gray-900 border border-gray-800 text-white rounded-3xl p-6 md:p-8 overflow-hidden shadow-2xl z-10"
+            className="relative w-full max-w-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-slate-900 dark:text-white rounded-3xl p-6 md:p-8 overflow-hidden shadow-2xl z-10"
           >
             {/* Background Blob Effects */}
             <div className="absolute -top-16 -left-16 w-36 h-36 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
@@ -158,13 +158,13 @@ export default function HireMeModal({ isOpen, onClose }) {
             {/* Header */}
             <div className="flex justify-between items-center mb-6 relative z-10">
               <div>
-                <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">Collaboration</span>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mt-1">Hire Me</h3>
+                <span className="text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-widest">Collaboration</span>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Hire Me</h3>
               </div>
               <button
                 onClick={onClose}
                 aria-label="Close modal"
-                className="p-2 rounded-xl text-gray-400 hover:text-white bg-gray-800/40 hover:bg-gray-800 border border-gray-800 transition-all hover:scale-105 active:scale-95"
+                className="p-2 rounded-xl text-gray-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white bg-gray-100 dark:bg-gray-800/40 hover:bg-gray-200 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-800 transition-all hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <X size={20} />
               </button>
@@ -174,11 +174,11 @@ export default function HireMeModal({ isOpen, onClose }) {
             <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
               {/* Full Name */}
               <div>
-                <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
+                <label className="block text-[11px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 dark:text-gray-500">
                     <User size={18} />
                   </div>
                   <input
@@ -188,25 +188,25 @@ export default function HireMeModal({ isOpen, onClose }) {
                     onChange={handleChange}
                     disabled={isSending}
                     placeholder="John Doe"
-                    className={`w-full h-12 pl-11 pr-4 bg-gray-950/60 border rounded-2xl text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
+                    className={`w-full h-12 pl-11 pr-4 bg-gray-50 dark:bg-gray-950/60 border rounded-2xl text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-all duration-300 ${
                       errors.fullName
                         ? 'border-red-500/60 focus:border-red-500/80 focus:ring-1 focus:ring-red-500/20'
-                        : 'border-gray-800 hover:border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
+                        : 'border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
                     }`}
                   />
                 </div>
                 {errors.fullName && (
-                  <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.fullName}</p>
+                  <p className="text-red-500 dark:text-red-400 text-xs mt-1.5 ml-1">{errors.fullName}</p>
                 )}
               </div>
 
               {/* Email Address */}
               <div>
-                <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
+                <label className="block text-[11px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 dark:text-gray-500">
                     <Mail size={18} />
                   </div>
                   <input
@@ -216,25 +216,25 @@ export default function HireMeModal({ isOpen, onClose }) {
                     onChange={handleChange}
                     disabled={isSending}
                     placeholder="john@example.com"
-                    className={`w-full h-12 pl-11 pr-4 bg-gray-950/60 border rounded-2xl text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
+                    className={`w-full h-12 pl-11 pr-4 bg-gray-50 dark:bg-gray-950/60 border rounded-2xl text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-all duration-300 ${
                       errors.email
                         ? 'border-red-500/60 focus:border-red-500/80 focus:ring-1 focus:ring-red-500/20'
-                        : 'border-gray-800 hover:border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
+                        : 'border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
                     }`}
                   />
                 </div>
                 {errors.email && (
-                  <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.email}</p>
+                  <p className="text-red-500 dark:text-red-400 text-xs mt-1.5 ml-1">{errors.email}</p>
                 )}
               </div>
 
               {/* Phone Number */}
               <div>
-                <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
-                  Phone Number <span className="text-gray-500 font-normal">(Optional)</span>
+                <label className="block text-[11px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                  Phone Number <span className="text-gray-400 font-normal">(Optional)</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 dark:text-gray-500">
                     <Phone size={18} />
                   </div>
                   <input
@@ -244,25 +244,25 @@ export default function HireMeModal({ isOpen, onClose }) {
                     onChange={handleChange}
                     disabled={isSending}
                     placeholder="+1 (555) 000-0000"
-                    className={`w-full h-12 pl-11 pr-4 bg-gray-950/60 border rounded-2xl text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
+                    className={`w-full h-12 pl-11 pr-4 bg-gray-50 dark:bg-gray-950/60 border rounded-2xl text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-all duration-300 ${
                       errors.phone
                         ? 'border-red-500/60 focus:border-red-500/80'
-                        : 'border-gray-800 hover:border-gray-700 focus:border-indigo-500'
+                        : 'border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 focus:border-indigo-500'
                     }`}
                   />
                 </div>
                 {errors.phone && (
-                  <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.phone}</p>
+                  <p className="text-red-500 dark:text-red-400 text-xs mt-1.5 ml-1">{errors.phone}</p>
                 )}
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
+                <label className="block text-[11px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
                   Your Message <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute top-3 left-4 pointer-events-none text-gray-500">
+                  <div className="absolute top-3 left-4 pointer-events-none text-gray-400 dark:text-gray-500">
                     <MessageSquare size={18} />
                   </div>
                   <textarea
@@ -272,15 +272,15 @@ export default function HireMeModal({ isOpen, onClose }) {
                     onChange={handleChange}
                     disabled={isSending}
                     placeholder="Tell me about your project, target budget, or what you need..."
-                    className={`w-full pl-11 pr-4 py-3 bg-gray-950/60 border rounded-2xl text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 resize-none ${
+                    className={`w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-gray-950/60 border rounded-2xl text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none transition-all duration-300 resize-none ${
                       errors.message
                         ? 'border-red-500/60 focus:border-red-500/80 focus:ring-1 focus:ring-red-500/20'
-                        : 'border-gray-800 hover:border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
+                        : 'border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
                     }`}
                   />
                 </div>
                 {errors.message && (
-                  <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.message}</p>
+                  <p className="text-red-500 dark:text-red-400 text-xs mt-1.5 ml-1">{errors.message}</p>
                 )}
               </div>
 

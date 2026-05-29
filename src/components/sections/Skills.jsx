@@ -62,7 +62,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gray-950 transition-colors duration-300">
+    <section id="skills" className="py-20 bg-white dark:bg-gray-950 transition-colors duration-300">
       <div className="section-container">
         <div className="flex flex-col items-center mb-16 text-center">
           <motion.div
@@ -77,7 +77,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors">
             
             My <span className="text-indigo-600">Technical Toolbox</span>
           </motion.h2>
@@ -86,7 +86,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-gray-400 max-w-2xl">
+            className="text-gray-600 dark:text-gray-400 max-w-2xl">
             
             A comprehensive overview of the technologies and tools I&apos;ve mastered over the years to build high-quality digital solutions.
           </motion.p>
@@ -96,7 +96,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gray-900/80 border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-none p-6 md:p-10 rounded-3xl">
+          className="glass-card p-6 md:p-10 rounded-3xl">
           
           <Tabs
             defaultActiveKey="frontend"
@@ -120,7 +120,7 @@ export default function Skills() {
                   transition={{ delay: index * 0.1 }}>
                   
                       <div className="flex justify-between items-center mb-2">
-                        <span className="font-bold text-white">{skill.name}</span>
+                        <span className="font-bold text-slate-900 dark:text-white">{skill.name}</span>
                         <span className="text-indigo-600 dark:text-indigo-400 font-bold">{skill.level}%</span>
                       </div>
                       <Progress
@@ -146,7 +146,7 @@ export default function Skills() {
           { name: 'Git', icon: GitBranch, color: 'text-orange-500' },
           { name: 'VS Code', icon: Code, color: 'text-blue-500' },
           { name: 'Tailwind', icon: Layers, color: 'text-cyan-500' },
-          { name: 'React.js', icon: Monitor, color: 'text-white' },
+          { name: 'React.js', icon: Monitor, color: 'text-sky-500' },
           { name: 'Figma', icon: Frame, color: 'text-purple-500' },
           { name: 'Responsive', icon: Monitor, color: 'text-green-500' }].
           map((tool, i) =>
@@ -157,26 +157,28 @@ export default function Skills() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             whileHover={{ y: -5 }}
-            className="flex flex-col items-center gap-3 p-6 bg-gray-900/80 border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-none rounded-2xl transition-all hover:border-indigo-500/50">
+            className="flex flex-col items-center gap-3 p-6 glass-card rounded-2xl transition-all hover:border-indigo-500/50">
             
               <tool.icon className={`w-8 h-8 ${tool.color}`} />
-              <span className="text-sm font-bold text-white dark:text-gray-300 uppercase tracking-widest">{tool.name}</span>
+              <span className="text-sm font-bold text-slate-900 dark:text-gray-300 uppercase tracking-widest">{tool.name}</span>
             </motion.div>
           )}
         </div>
       </div>
 
-      {/* Global styles for AntD tabs */}
+      {/* Global styles for AntD tabs (scoped to larger devices to prevent mobile squishing) */}
       <style>{`
-        .skill-tabs .ant-tabs-nav-list {
-          width: 100%;
-          justify-content: space-between;
-        }
-        .skill-tabs .ant-tabs-tab {
-          font-weight: 600;
-          padding: 12px 0;
-          flex: 1;
-          justify-content: center;
+        @media (min-width: 640px) {
+          .skill-tabs .ant-tabs-nav-list {
+            width: 100%;
+            justify-content: space-between;
+          }
+          .skill-tabs .ant-tabs-tab {
+            font-weight: 600;
+            padding: 12px 0;
+            flex: 1;
+            justify-content: center;
+          }
         }
         .skill-tabs .ant-tabs-ink-bar {
           background: #6366F1;

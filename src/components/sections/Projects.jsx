@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button, Tag, Tooltip } from 'antd';
 import { Code2, ExternalLink, Rocket, FolderGit2, Palette, ArrowLeft, X, ZoomIn } from 'lucide-react';
@@ -19,7 +19,7 @@ import imgSchoolBanner  from '../../designs/school_banner.png';
 import imgShoes         from '../../designs/shoes_design.jpg';
 import imgThought       from '../../designs/thought_of_the_day.jpg';
 import imgTution        from '../../designs/tution.png';
-import imgHirelens      from '/Hirelens.png'
+import imgHirelens      from '../../designs/HireLens.png'
 import portfolio      from '../../designs/Old_Portfolio.png'
 
 // ─── WEB PROJECTS ────────────────────────────────────────────────────────────
@@ -213,6 +213,13 @@ const allProjects = [...webProjects, ...designProjects];
 
 // ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
 function Lightbox({ image, title, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -233,9 +240,10 @@ function Lightbox({ image, title, onClose }) {
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-all backdrop-blur-sm cursor-pointer"
+            className="absolute top-4 right-4 z-10 bg-black/60 hover:bg-black/80 text-white rounded-full p-3 transition-all backdrop-blur-sm cursor-pointer hover:scale-105 active:scale-95"
+            aria-label="Close lightbox"
           >
-            < X  size={16} />
+            <X size={24} />
           </button>
 
           {/* Title bar */}
@@ -348,10 +356,10 @@ function ProjectCard({ project, i, onPreview }) {
             </Tag>
           ))}
         </div>
-        <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-indigo-600 transition-colors">
+        <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">
           {project.title}
         </h3>
-        <p className="text-gray-300 leading-relaxed mb-6 line-clamp-3">
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 line-clamp-3">
           {project.description}
         </p>
         <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
@@ -359,7 +367,7 @@ function ProjectCard({ project, i, onPreview }) {
             /* Design: View Design → opens lightbox */
             <button
               onClick={() => onPreview(project)}
-              className="text-pink-400 hover:text-pink-300 font-bold flex items-center gap-2 hover:gap-3 transition-all cursor-pointer "
+              className="text-pink-400 hover:text-pink-300 font-bold flex items-center gap-2 hover:gap-3 transition-all cursor-pointer"
             >
               View Design <ZoomIn size={16} />
             </button>
@@ -405,30 +413,30 @@ export default function Projects() {
         <Lightbox image={preview.image} title={preview.title} onClose={handleClose} />
       )}
 
-      <section id="projects" className="py-20 bg-gray-900 transition-colors duration-300">
+      <section id="projects" className="py-20 bg-slate-50 dark:bg-gray-900 transition-colors duration-300">
         <div className="section-container">
 
           {/* ── Header ── */}
           {showAll ? (
-            <div className="relative flex items-center justify-center mb-16 min-h-[80px]">
-              <div className="absolute left-0 flex flex-col gap-2">
-                <div className="flex items-center gap-2 px-4 py-1 rounded-full bg-indigo-500/10 text-indigo-400 font-bold text-sm uppercase tracking-wider w-fit">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-6 relative min-h-[80px]">
+              <div className="flex flex-col gap-2 relative z-10">
+                <div className="flex items-center gap-2 px-4 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-bold text-sm uppercase tracking-wider w-fit">
                   <FolderGit2 size={16} />
                   <span>All Projects</span>
                 </div>
                 <button
                   onClick={() => setShowAll(false)}
-                  className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-bold transition-colors w-fit"
+                  className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-bold transition-colors w-fit cursor-pointer"
                 >
                   <ArrowLeft size={20} /> Back
                 </button>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white md:absolute md:left-1/2 md:-translate-x-1/2 transition-colors text-center w-full md:w-auto">
                 Complete <span className="text-indigo-600">Portfolio</span>
               </h2>
             </div>
           ) : (
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
               <div>
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -443,21 +451,21 @@ export default function Projects() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-4xl md:text-5xl font-bold text-white"
+                  className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white transition-colors"
                 >
                   Recent <span className="text-indigo-600">Creations</span>
                 </motion.h2>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-2 sm:gap-3 w-full md:w-auto">
                 {['All', 'Web', 'Design'].map((item) => (
                   <button
                     key={item}
                     onClick={() => setFilter(item)}
-                    className={`px-6 py-2 rounded-xl font-bold transition-all ${
+                    className={`px-5 py-2 rounded-xl font-bold transition-all text-sm sm:text-base cursor-pointer ${
                       filter === item
                         ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
-                        : 'bg-gray-950 dark:bg-gray-800 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
+                        : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                     }`}
                   >
                     {item}
@@ -486,7 +494,7 @@ export default function Projects() {
             <Button
               size="large"
               onClick={() => setShowAll((prev) => !prev)}
-              className="h-14 px-10 font-bold bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-all rounded-xl border-none shadow-xl shadow-indigo-500/20"
+              className="h-14 px-10 font-bold bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition-all rounded-xl border-none shadow-xl shadow-indigo-500/20 cursor-pointer"
             >
               {showAll ? 'View Less' : 'View All Projects'}
             </Button>
