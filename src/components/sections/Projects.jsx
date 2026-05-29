@@ -19,7 +19,7 @@ import imgSchoolBanner  from '../../designs/school_banner.png';
 import imgShoes         from '../../designs/shoes_design.jpg';
 import imgThought       from '../../designs/thought_of_the_day.jpg';
 import imgTution        from '../../designs/tution.png';
-import imgHirelens      from '../../designs/HireLens.png'
+import imgHirelens      from '/HireLens.png'
 import portfolio      from '../../designs/Old_Portfolio.png'
 
 // ─── WEB PROJECTS ────────────────────────────────────────────────────────────
