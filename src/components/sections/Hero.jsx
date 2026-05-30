@@ -66,7 +66,7 @@ export default function Hero({ onHireMeClick }) {
             <div>
               <Button
                 size="large"
-                onClick={() => window.open('https://drive.google.com/file/d/1v89xsNLxuixvEbIjzQYJ5f2KFM9MsA8a/view?usp=sharing', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://drive.google.com/file/d/1sSPzre7cI5AR8SMtNPp-AWcIlgjWbXay/view?usp=sharing', '_blank', 'noopener,noreferrer')}
                 className="h-14 px-8 text-lg font-semibold border border-gray-200 dark:border-gray-800 transition-all flex items-center gap-2 rounded-xl text-gray-700 dark:text-gray-300 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-indigo-500/80 hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer hover:scale-105 active:scale-95 duration-200"
                 icon={<FileText size={20} />}
               >
