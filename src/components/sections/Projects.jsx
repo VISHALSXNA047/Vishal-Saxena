@@ -21,6 +21,7 @@ import imgThought       from '../../designs/thought_of_the_day.jpg';
 import imgTution        from '../../designs/tution.png';
 import imgHirelens      from '../../designs/Hirelens.png'
 import portfolio      from '../../designs/Old_Portfolio.png'
+import Todo             from '../../designs/todo.png';
 
 // ─── WEB PROJECTS ────────────────────────────────────────────────────────────
 const webProjects = [
@@ -46,17 +47,17 @@ const webProjects = [
     featured: false,
     category: 'web',
   },
-  // {
-  //   id: 'w3',
-  //   title: 'InsightCRM',
-  //   description: 'A modern CRM system for small businesses to manage customer relationships, tasks, and sales pipelines with real-time analytics.',
-  //   tech: ['TypeScript', 'Express', 'MongoDB'],
-  //   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-  //   github: 'https://github.com',
-  //   live: 'https://demo.com',
-  //   featured: false,
-  //   category: 'web',
-  // },
+  {
+    id: 'w3',
+    title: 'Todo List',
+    description: 'A clean and responsive Todo List Application built with React.js, enabling users to efficiently manage daily tasks with an intuitive interface, task organization features, and a seamless user experience across all devices.',
+    tech: ['React Js', 'Tailwind'],
+    image: Todo,
+    github: 'https://github.com/VISHALSXNA047/Todo-List-',
+    live: 'https://todo-list-three-pi-22.vercel.app/',
+    featured: false,
+    category: 'web',
+  },
   // {
   //   id: 'w4',
   //   title: 'PixelArt Studio',
