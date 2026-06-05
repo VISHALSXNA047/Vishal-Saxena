@@ -39,7 +39,7 @@ export default function Hero({ onHireMeClick }) {
             Available for hire
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-slate-900 dark:text-white transition-colors">
+          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight text-slate-900 dark:text-white transition-colors">
             <span className="text-slate-900 dark:text-white">I&apos;m</span> <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Vishal Saxena</span>
           </h1>
 
@@ -66,7 +66,7 @@ export default function Hero({ onHireMeClick }) {
             <div>
               <Button
                 size="large"
-                onClick={() => window.open('https://drive.google.com/file/d/1sSPzre7cI5AR8SMtNPp-AWcIlgjWbXay/view?usp=sharing', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://drive.google.com/file/d/1v89xsNLxuixvEbIjzQYJ5f2KFM9MsA8a/view?usp=sharing', '_blank', 'noopener,noreferrer')}
                 className="h-14 px-8 text-lg font-semibold border border-gray-200 dark:border-gray-800 transition-all flex items-center gap-2 rounded-xl text-gray-700 dark:text-gray-300 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:border-indigo-500/80 hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer hover:scale-105 active:scale-95 duration-200"
                 icon={<FileText size={20} />}
               >
@@ -107,7 +107,7 @@ export default function Hero({ onHireMeClick }) {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-6 -right-6 bg-white/90 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 shadow-xl p-4 rounded-2xl z-20">
+                className="absolute -top-4 -right-2 sm:-top-6 sm:-right-6 bg-white/90 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 shadow-xl p-4 rounded-2xl z-20">
 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-500">
@@ -123,7 +123,7 @@ export default function Hero({ onHireMeClick }) {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-6 -left-6 bg-white/90 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 shadow-xl p-4 rounded-2xl z-20">
+                className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-white/90 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 shadow-xl p-4 rounded-2xl z-20">
 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-500">

@@ -61,7 +61,7 @@ export default function Navbar({ onHireMeClick }) {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <div className="hidden lg:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -84,7 +84,7 @@ export default function Navbar({ onHireMeClick }) {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="lg:hidden flex items-center gap-3">
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -103,7 +103,7 @@ export default function Navbar({ onHireMeClick }) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-3 shadow-xl max-h-[calc(100vh-80px)] overflow-y-auto"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-4 flex flex-col gap-3 shadow-xl max-h-[calc(100vh-80px)] overflow-y-auto"
           >
             {navLinks.map((link) => (
               <a

@@ -75,7 +75,7 @@ export default function Experience() {
             {experiences.map((item, i) =>
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50, scale: 0.9 }}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -89,8 +89,8 @@ export default function Experience() {
                 </div>
 
                 {/* Content Card */}
-                <div className={`w-full md:w-[45%] ml-12 md:ml-0 overflow-hidden`}>
-                  <div className="glass-card p-6 md:p-8 rounded-3xl group hover:border-indigo-500 transition-all">
+                <div className={`w-[calc(100%-3rem)] md:w-[45%] ml-12 md:ml-0 overflow-hidden`}>
+                  <div className="glass-card p-5 sm:p-6 md:p-8 rounded-3xl group hover:border-indigo-500 transition-all">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">
                         {item.title}

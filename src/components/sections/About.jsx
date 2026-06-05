@@ -40,7 +40,7 @@ export default function About() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-10 rounded-3xl relative overflow-hidden">
+            className="glass-card p-6 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden">
             
             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full -mr-16 -mt-16 blur-2xl opacity-50" />
             
@@ -68,7 +68,7 @@ export default function About() {
                 className="p-4 rounded-2xl bg-white dark:bg-gray-950/50 shadow-lg dark:shadow-none border border-gray-200 dark:border-gray-800 hover:border-indigo-500/50 transition-all flex flex-col items-center text-center">
                 
                   <stat.icon className={`w-6 h-6 ${stat.color} mb-3`} />
-                  <div className="text-l font-bold text-slate-900 dark:text-white tracking-tight">{stat.value}</div>
+                  <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight">{stat.value}</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest leading-none mt-1">{stat.label}</div>
                 </motion.div>
               )}

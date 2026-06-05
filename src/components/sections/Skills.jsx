@@ -168,7 +168,7 @@ export default function Skills() {
 
       {/* Global styles for AntD tabs (scoped to larger devices to prevent mobile squishing) */}
       <style>{`
-        @media (min-width: 640px) {
+        @media (min-width: 481px) {
           .skill-tabs .ant-tabs-nav-list {
             width: 100%;
             justify-content: space-between;

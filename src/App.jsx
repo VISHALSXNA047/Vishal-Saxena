@@ -52,7 +52,7 @@ export default function Home() {
             }
       }}
     >
-      <main className="relative bg-white dark:bg-gray-950 text-slate-900 dark:text-gray-50 transition-colors duration-300 min-h-screen">
+      <main className="relative bg-white dark:bg-gray-950 text-slate-900 dark:text-gray-50 transition-colors duration-300 min-h-screen overflow-x-hidden w-full">
         <CustomCursor />
         <BackToTop />
         <ScrollProgress />

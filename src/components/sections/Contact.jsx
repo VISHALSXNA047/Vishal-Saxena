@@ -71,7 +71,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-8">
             
-            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-none p-8 rounded-3xl space-y-8">
+            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 shadow-lg dark:shadow-none p-6 sm:p-8 rounded-3xl space-y-8">
                <div className="flex items-start gap-5 group">
                   <div className="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all">
                      <Mail size={24} />
@@ -103,7 +103,7 @@ export default function Contact() {
                </div>
             </div>
 
-            <div className="bg-white/80 dark:bg-gray-900 backdrop-blur-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-none p-8 rounded-3xl">
+            <div className="bg-white/80 dark:bg-gray-900 backdrop-blur-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-none p-6 sm:p-8 rounded-3xl">
                <h4 className="font-bold text-slate-900 dark:text-white mb-6">Social Connect</h4>
                <div className="flex gap-4">
                   {[
@@ -123,7 +123,7 @@ export default function Contact() {
                </div>
             </div>
             
-            <div className="bg-indigo-600 p-8 rounded-3xl text-white relative overflow-hidden group premium-shadow">
+            <div className="bg-indigo-600 p-6 sm:p-8 rounded-3xl text-white relative overflow-hidden group premium-shadow">
                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full translate-x-10 -translate-y-10 group-hover:scale-150 transition-transform duration-700" />
                <h4 className="text-xl font-bold mb-2">Available for projects</h4>
                <p className="text-indigo-100 mb-6 font-medium">Let&apos;s build something amazing together!</p>
@@ -137,7 +137,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-7">
             
-            <div className="bg-white/80 dark:bg-gray-900 backdrop-blur-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-none p-8 md:p-12 rounded-3xl relative">
+            <div className="bg-white/80 dark:bg-gray-900 backdrop-blur-xl border border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-none p-6 sm:p-8 md:p-12 rounded-3xl relative">
               <div className="absolute top-0 right-0 p-8 opacity-5 text-indigo-600">
                 <Mail size={120} />
               </div>

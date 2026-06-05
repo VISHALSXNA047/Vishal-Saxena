@@ -19,8 +19,8 @@ import imgSchoolBanner  from '../../designs/school_banner.png';
 import imgShoes         from '../../designs/shoes_design.jpg';
 import imgThought       from '../../designs/thought_of_the_day.jpg';
 import imgTution        from '../../designs/tution.png';
-import imgHirelens      from '../../designs/Hirelens.png'
-import portfolio      from '../../designs/Old_Portfolio.png'
+import imgHirelens      from '../../designs/HireLens.png';
+import portfolio        from '../../designs/Old_Portfolio.png';
 import Todo             from '../../designs/todo.png';
 
 // ─── WEB PROJECTS ────────────────────────────────────────────────────────────
@@ -344,7 +344,7 @@ function ProjectCard({ project, i, onPreview }) {
         )}
       </div>
 
-      <div className="p-8">
+      <div className="p-6 sm:p-8">
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tech.map((t) => (
             <Tag
